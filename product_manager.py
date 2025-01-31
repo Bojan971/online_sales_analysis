@@ -20,3 +20,9 @@ class ProductManager:
         total_value = sum(product.price * product.quantity for product in self.products)
         return total_value
     
+    def remove_product_by_name(self, product_name):
+        self.products = [product for product in self.products if product.name.lower() != product_name.lower()]
+        
+        # Print confirmation message
+        print(f"Product '{product_name}' removed, if it existed.")
+    
